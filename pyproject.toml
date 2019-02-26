@@ -25,7 +25,7 @@ name = "cafeteria-asyncio"
 packages = [
     { include = "cafeteria" },
 ]
-version = "0.1.0-dev"
+version = "0.1.0"
 description = "An extension to the cafeteria package to enable asyncio specific patterns for python 3.7 and above applications/libraries."
 authors = [
     "Arun Babu Neelicattu <arun.neelicattu@gmail.com>"
