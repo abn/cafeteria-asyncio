@@ -22,23 +22,31 @@ exclude = '''
 
 [tool.poetry]
 name = "cafeteria-asyncio"
+packages = [
+    { include = "cafeteria" },
+]
 version = "0.1.0-dev"
 description = "An extension to the cafeteria package to enable asyncio specific patterns for python 3.7 and above applications/libraries."
 authors = [
-    "Twyla Engineering <software@twyla.ai>"
+    "Arun Babu Neelicattu <arun.neelicattu@gmail.com>"
 ]
-license = "Proprietary"
-
+license = "APLv2"
 readme = "README.md"
-
-repository = "https://github.com/twyla-ai/cafeteria-asyncio"
-
+repository = "https://github.com/abn/cafeteria-asyncio"
 keywords = []
-
-classifiers = []
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3 :: Only",
+    "Framework :: AsyncIO"
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+cafeteria = "^0.18.0"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^1.11"
