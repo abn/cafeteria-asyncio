@@ -1,0 +1,29 @@
+language: python
+dist: xenial
+python:
+    - 3.7
+env:
+  global:
+    - PYPI_USER=abn
+    - secure: "gPozxkJRk1WSVjUij+IXYyKCnDkwQGdwHr3sPvaQ0IEr9Si2bMHPt6F/0iY8NQqiBPCROvamQggFpXiJNUIQ31sarELhbSPFJlWMEJMSuW4Z/RSTNGOvfgX8R9U37LMSzUHD03i4MARNJVH/u9giy+rpacoD4QqO2zUBJE9pYl8nuFEmJ/xUdKY1iGZOAmkyR518ALC4ja9q2u3CvM1j0Czm1a6b4KWqoyMQnEE5SwCjlsw5VHEw/WnFnvTDUy2zjmx8f1EoWShSQD6M6ezBlJH0CF8mCRpPzMjJogLj5zNI9MGUcUvKgYKG29nrAqyOyL/qS9a70R2LN1oMpmW6RILY8SM/2zQbJkRxlA+9dt60pvG/24e//mFponw/nHrv/s8m3hH+e1cpgT8MQfAl6YLld32LBJvKc+FSMUyWW8ZrEeT3BFkXD2g76Mf1KIIkmUU9P0Kd4c1R+gZBOhXtLLUM6BCTRTcnVTvQtmLt72SbiPwZKo42bUVSWDmZJEj1qquwfPzFABaK39l+tuLR7t1H4MJ7+AWsL6sSfAbVk4IEclQ3wecFWYYd53b80sOyHAxS0mgEpQMABDasGHjbria7ouHeRwXfioAfhavs94N+m/4qM4G5Ihl01USMW1zoAFsFN+IH+hAHxwOuhqwiVSn0umeBdDIussMwmo7n730="
+
+install:
+  - pip install poetry
+  - poetry add --dev appdirs
+  - poetry install
+
+script: ignore
+
+jobs:
+  include:
+    - stage: build
+      python: 3.7
+      script:
+        - poetry build
+      if: tag IS NOT present
+    - stage: deploy
+      python: 3.7
+      script:
+        - poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
+        - poetry publish --build
+      if: tag IS present
