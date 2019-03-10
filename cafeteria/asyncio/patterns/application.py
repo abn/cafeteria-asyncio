@@ -17,7 +17,7 @@ class AsyncioGracefulApplication:
     def run(self):
         loop = asyncio.get_event_loop()
         handle_signals(loop)
-        asyncio.new
+
         try:
             loop.run_until_complete(self.main())
         except (asyncio.CancelledError, KeyboardInterrupt):
