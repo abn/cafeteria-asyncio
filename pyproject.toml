@@ -46,7 +46,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-cafeteria = "^0.18.0"
+cafeteria = ">=0.18,<0.20"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^1.17"
