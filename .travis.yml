@@ -23,6 +23,6 @@ jobs:
     - stage: deploy
       python: 3.7
       script:
-        - poetry config http-basic.pypi "@token" "${PYPI_API_TOKEN}"
+        - poetry config http-basic.pypi "__token__" "${PYPI_API_TOKEN}"
         - poetry publish --build
       if: tag IS present
