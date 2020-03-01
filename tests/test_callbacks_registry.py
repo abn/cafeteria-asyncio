@@ -24,6 +24,33 @@ def test_callback_registry_simple(mocker):
     callback_one.assert_not_called()
 
 
+def test_callback_registry_multiple(mocker):
+    callback_one = mocker.Mock()
+    callback_two = mocker.Mock()
+    registry = CallbackRegistry(callbacks={"event": [callback_one, callback_two]})
+
+    assert len(registry.callbacks("event")) == 2
+
+    registry.dispatch("event", "event")
+
+    callback_one.assert_called_once()
+    callback_one.assert_called_once_with("event")
+
+    callback_two.assert_called_once()
+    callback_two.assert_called_once_with("event")
+
+    callback_one.reset_mock()
+    callback_two.reset_mock()
+
+    registry.deregister("event", callback_two)
+    registry.dispatch("event", "event")
+
+    callback_one.assert_called_once()
+    callback_one.assert_called_once_with("event")
+
+    callback_two.assert_not_called()
+
+
 def test_callback_registry_coro_without_loop(caplog):
     async def hello():
         pass

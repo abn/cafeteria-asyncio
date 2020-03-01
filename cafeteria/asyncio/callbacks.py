@@ -103,12 +103,18 @@ def trigger_callback(callback: CallbackType, *args, **kwargs) -> CallbackResultT
 
 class CallbackRegistry(LoggedObject):
     def __init__(
-        self, callbacks: Optional[Dict[EventType, CallbackType]] = None
+        self,
+        callbacks: Optional[
+            Dict[EventType, Union[CallbackType, List[CallbackType]]]
+        ] = None,
     ) -> None:
         self._callbacks: Dict[EventType, List[Callback]] = dict()
         if callbacks is not None:
             for event_type, callback in callbacks.items():
-                self.register(event_type, callback)
+                if not isinstance(callback, list):
+                    callback = [callback]
+                for c in callback:
+                    self.register(event_type, c)
 
     def callbacks(self, event_type: EventType = None) -> List[Callback]:
         """
