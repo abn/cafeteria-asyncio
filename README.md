@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/abn/cafeteria-asyncio.svg?branch=master)](https://travis-ci.org/abn/cafeteria-asyncio)
+[![](https://github.com/abn/aiven-monitor-http/workflows/Test%20Suite/badge.svg)](https://github.com/abn/cafeteria-asyncio/actions?query=workflow%3A%22Test+Suite%22)
 [![image](https://img.shields.io/pypi/v/cafeteria-asyncio.svg)](https://pypi.org/project/cafeteria-asyncio/)
 [![image](https://img.shields.io/pypi/l/cafeteria-asyncio.svg)](https://pypi.org/project/cafeteria-asyncio/)
 [![image](https://img.shields.io/pypi/pyversions/cafeteria-asyncio.svg)](https://pypi.org/project/cafeteria-asyncio/)
