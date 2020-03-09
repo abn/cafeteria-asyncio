@@ -1,25 +1,28 @@
 import asyncio
 from abc import abstractmethod
+from typing import Any
+
+from cafeteria.logging import LoggedObject
 
 from cafeteria.asyncio.commons import cancel_tasks_on_termination
 
 
-class AsyncioGracefulApplication:
+class AsyncioGracefulApplication(LoggedObject):
     @abstractmethod
-    async def main(self) -> None:
+    async def main(self) -> Any:
         """
         The main method to execute for the application. The application runs until this
         completes or errors out.
         """
         raise NotImplementedError
 
-    def run(self):
-        loop = asyncio.get_event_loop()
-        cancel_tasks_on_termination(loop)
+    async def __main(self) -> Any:
+        cancel_tasks_on_termination()
+        return await self.main()
 
+    def run(self, debug: bool = False):
         try:
-            loop.run_until_complete(self.main())
+            self.logger.debug("Starting application")
+            return asyncio.run(self.__main(), debug=debug)
         except (asyncio.CancelledError, KeyboardInterrupt):
-            loop.stop()
-        finally:
-            loop.close()
+            self.logger.debug("Application halted")
