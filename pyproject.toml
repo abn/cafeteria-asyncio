@@ -50,7 +50,7 @@ cafeteria = "^0"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.6"
-flake8 = "^3.7"
+flake8 = "^3.8"
 coverage = "^4.5"
 black = "^19.10b0"
 tox = "^3.14"
