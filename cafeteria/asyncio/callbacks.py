@@ -3,18 +3,8 @@ import logging
 import warnings
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import (
-    Any,
-    Callable,
-    Coroutine,
-    Dict,
-    Generator,
-    Hashable,
-    List,
-    Optional,
-    Tuple,
-    Union,
-)
+from typing import (Any, Callable, Coroutine, Dict, Generator, Hashable, List,
+                    Optional, Tuple, Union)
 
 from cafeteria.logging import LoggedObject
 

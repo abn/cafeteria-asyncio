@@ -3,7 +3,8 @@ import signal
 
 import pytest
 
-from cafeteria.asyncio.commons import cancel_all_tasks, cancel_tasks_on_termination
+from cafeteria.asyncio.commons import (cancel_all_tasks,
+                                       cancel_tasks_on_termination)
 
 
 # noinspection PyUnresolvedReferences,PyProtectedMember
