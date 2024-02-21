@@ -2,11 +2,8 @@ import asyncio
 
 import pytest
 
-from cafeteria.asyncio.callbacks import (
-    Callback,
-    SimpleTriggerCallback,
-    trigger_callback,
-)
+from cafeteria.asyncio.callbacks import (Callback, SimpleTriggerCallback,
+                                         trigger_callback)
 
 
 @pytest.mark.asyncio
