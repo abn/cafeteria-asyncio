@@ -38,14 +38,11 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Framework :: AsyncIO"
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 cafeteria = "^0"
 
 [tool.poetry.dev-dependencies]
