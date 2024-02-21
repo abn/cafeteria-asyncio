@@ -4,20 +4,11 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
+
+[tool.isort]
+profile = "black"
+src_paths = ["cafeteria", "test"]
+known_first_party = "cafeteria"
 
 [tool.poetry]
 name = "cafeteria-asyncio"

@@ -2,9 +2,8 @@ import asyncio
 from abc import abstractmethod
 from typing import Any
 
-from cafeteria.logging import LoggedObject
-
 from cafeteria.asyncio.commons import cancel_tasks_on_termination
+from cafeteria.logging import LoggedObject
 
 
 class AsyncioGracefulApplication(LoggedObject):
