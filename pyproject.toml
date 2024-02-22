@@ -7,13 +7,16 @@ line-length = 88
 
 [tool.isort]
 profile = "black"
-src_paths = ["cafeteria", "test"]
+src_paths = ["src", "test"]
 known_first_party = "cafeteria"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
 
 [tool.poetry]
 name = "cafeteria-asyncio"
 packages = [
-    { include = "cafeteria" },
+    { include = "cafeteria", from = "src" },
 ]
 version = "0.3.0a0"
 description = "An extension to the cafeteria package to enable asyncio specific patterns for python 3.7 and above applications/libraries."
@@ -34,16 +37,11 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-cafeteria = "^0"
+cafeteria = "^0,!=0.22.0"
 
 [tool.poetry.dev-dependencies]
-pre-commit = "^2.12"
-flake8 = "^3.7"
-coverage = "^5.5"
-black = "^21.11b1"
-tox = "^3.14"
-pytest = "^6.2"
-bumpversion = "^0.6"
-pytest-asyncio = "^0.15"
-pytest-mock = "^3.2"
-pytest-cov = "^2.11"
+coverage = "^7.4"
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+pytest-mock = "^3.12"
+pytest-cov = "^4.1"
