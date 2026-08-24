@@ -18,8 +18,8 @@ name = "cafeteria-asyncio"
 packages = [
     { include = "cafeteria", from = "src" },
 ]
-version = "0.4.0a0"
-description = "An extension to the cafeteria package to enable asyncio specific patterns for python 3.7 and above applications/libraries."
+version = "0.4.0"
+description = "Deprecated: Asyncio extensions for cafeteria (features moved into main cafeteria package)"
 authors = [
     "Arun Babu Neelicattu <arun.neelicattu@gmail.com>"
 ]
@@ -32,7 +32,8 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
-    "Framework :: AsyncIO"
+    "Framework :: AsyncIO",
+    "Development Status :: 7 - Inactive"
 ]
 
 [tool.poetry.dependencies]

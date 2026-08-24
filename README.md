@@ -6,7 +6,17 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=abn/cafeteria-asyncio)](https://dependabot.com)
 
 # Asyncio Patterns and Utilities
-An extension to the cafeteria package to enable asyncio specific patterns for python 3.7 and above applications/libraries.
+
+> [!WARNING]
+> **This package is deprecated and no longer maintained.**
+>
+> All features and modules from `cafeteria-asyncio` have been integrated directly into the main [`cafeteria`](https://pypi.org/project/cafeteria/) package.
+>
+> Going forward, please install `cafeteria` instead:
+> ```bash
+> pip install cafeteria
+> ```
+> **No changes to imports are required.** Existing code using `cafeteria.asyncio` will continue to work seamlessly with `cafeteria`.
 
 ## Installation
 `pip install cafeteria-asyncio`
